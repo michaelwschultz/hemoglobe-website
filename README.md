@@ -1,5 +1,3 @@
-hemoglobe.com - created Thu Feb  4 02:12:56 PST 2016
+#hemoglobe
 
-  Setup using @michaelschultz custom bash script,
-  http://github.com/michaelwschultz/basher
-  
+Hemoglobe website

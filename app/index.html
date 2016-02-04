@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Michael Schultz" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!--<meta name="apple-itunes-app" content="app-id=622855569">-->
+
+	<link rel="icon" href="favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+  <meta property="og:title" content="Hemoglobe"/>
+  <meta property="og:type" content="application"/>
+  <meta property="og:url" content="http://hemoglobe.com"/>
+  <meta property="og:image" content="http://hemoglobe.com/img/iTunesArtwork.png"/>
+  <meta property="og:image" content="http://hemoglobe.com/img/hemoglobe-final-6.jpg"/>
+  <meta property="og:image" content="http://hemoglobe.com/img/iphone5-screen-1_2.png"/>
+  <meta property="og:site_name" content="Hemoglobe.com"/>
+  <meta property="og:description" content="From the creator of Hemolog comes a brand new mobile app for the Hemophilia community. Download Hemoglobe on the App Store now!"/>
+  <link rel="image_src" href="http://hemoglobe.com/img/iTunesArtwork.png" />
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-git.js'></script>
+  
+  
+  	<script type='text/javascript'>//<![CDATA[ 
+	$(function(){
+	$( '.distance' ).each(function ( i, distance ) {
+	
+	    var width = $( distance ).width(),
+	        html = '<span style="white-space:nowrap">',
+		        line = $( distance ).wrapInner( html ).children()[ 0 ],
+	        n = 100;
+	    
+	    $( distance ).css( 'font-size', n );
+	
+	    while ( $( line ).width() > width ) {
+	        $( distance ).css( 'font-size', --n );
+	    }
+	
+	    $( distance ).text( $( line ).text() );
+	
+	});
+	});//]]>  
+
+	</script>
+	
+	
+	
+	<script type='text/javascript'>
+	$(document).ready(function() {
+  
+	  $('body').addClass('js');
+	  
+	  var $menu = $('#side-menu'),
+	    $menulink = $('.side-menu-link'),
+	    $wrap = $('#wrap');
+	  
+	  $menulink.click(function() {
+	    /*$menulink.toggleClass('active');*/
+	    $wrap.toggleClass('active'),
+	    $menu.toggleClass('show');
+	    return false;
+	  });
+	});
+
+	</script>
+  
+  
+  	<!--Get User Location-->
+  	<script>
+	  	function getUserLocation() { 
+	  	
+	  	document.getElementById("locationData").innerHTML = "Locating <img src='img/loading.gif' />";
+	  	
+		//check if the geolocation object is supported, if so get position
+		if (navigator.geolocation)
+			navigator.geolocation.getCurrentPosition(displayLocation, displayError);
+		else
+			document.getElementById("locationData").innerHTML = "Sorry - your browser doesn't support geolocation!";
+		}
+		
+		function displayLocation(position) { 
+
+		//build text string including co-ordinate data passed in parameter
+		var displayText = "User latitude is " + position.coords.latitude + " and longitude is " + position.coords.longitude;
+		
+		//display the string for demonstration
+		document.getElementById("locationData").innerHTML = displayText;
+		}
+		
+		
+		function displayError(error) { 
+
+		//get a reference to the HTML element for writing result
+		var locationElement = document.getElementById("locationData");
+		
+		//find out which error we have, output message accordingly
+		switch(error.code) {
+		case error.PERMISSION_DENIED:
+			locationElement.innerHTML = "Permission was denied";
+			break;
+		case error.POSITION_UNAVAILABLE:
+			locationElement.innerHTML = "Location data not available";
+			break;
+		case error.TIMEOUT:
+			locationElement.innerHTML = "Location request timeout";
+			break;
+		case error.UNKNOWN_ERROR:
+			locationElement.innerHTML = "An unspecified error occurred";
+			break;
+		default:
+			locationElement.innerHTML = "Location Unknown";
+			break;
+		}}
+	  	
+  	</script>
+  
+    <title>Hemoglobe</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+	
+    <link rel="stylesheet" href="css/bootstrap-responsive.css" />
+
+	<link rel="stylesheet" href="css/style.css" />
+ 	
+   
+  </head>
+  <body>
+
+	  <div id="wrap" class="row-fluid wrap">
+
+      <!-- Navigation -->
+     <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Hemoglobe</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <!--<li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Change Map View <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a onclick="plotUsersOnMapAndBounce('All', true);" href="#">All Users</a></li>
+                  <li><a onclick="plotUsersOnMapAndBounce('Hemophilia', true);" href="#">Hemophiliacs</a></li>
+                  <li><a onclick="plotUsersOnMapAndBounce('Von Willebrand', true);" href="#">Von Willebrands Disease</a></li>
+				  <li><a onclick="plotUsersOnMapAndBounce('Parent', true);" href="#">Parents</a></li>
+				  <li><a onclick="plotUsersOnMapAndBounce('Industry Member', true);" href="#">Industry Members</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">FYI</li>
+                  <li><a href="#">Bouncing pins represent current active users.</a></li>
+                </ul>
+              </li>-->
+            </ul>
+            <form class="navbar-form pull-right">
+              <input class="span3" type="text" placeholder="Email">
+              <input class="span3" type="password" placeholder="Password">
+              <button type="submit" class="btn">Sign in</button>
+              <a href="#createaccountModal" role="button" class="btn" data-toggle="modal">Create an Account</a>
+            </form>
+          </div>
+         </div>
+       </div>
+      </div>
+
+		
+  
+  
+    <!--Sidebar content-->
+    <aside class="well span12 oc" id="side-menu" role="navigation">
+    
+	  <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="side-menu-link btn" href="#"><i class="icon-arrow-left"></i> Back</a>
+         </div>
+       </div>
+      </div>
+
+      <div class="userInfo">
+    
+    	<a href="#userphotoModal" data-toggle="modal"><img class="circle" src="img/michael.jpeg" /></a> <h1>Michael Schultz</h1> <br /> <h2>Hemophilia</h2>
+    	
+    	<p class="hometown">Hometown: Dallas, TX</p>
+    	<p>Web designer/developer, music maker, game player, photo taker. I also created Hemolog and @Hemoglobe.</p>
+    	
+    	<div class="gmap"><iframe width="100%" height="120" frameborder="0" controls="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;ll=32.783522,-96.795731&amp;spn=0.198584,0.308304&amp;t=m&amp;z=12&amp;output=embed"></iframe></div>
+    	
+    	<a class="btn btn-primary btn-large btn-block" href="#messageuserModal" data-toggle="modal">Message Michael</a>
+    
+      </div>
+
+    </aside>
+
+	<div class="container">
+
+		<div class="row">
+		
+			<div class="span12">
+				
+				<table class="table">
+				<caption><button class="btn btn-large btn-primary currentCity" type="button" onclick="getUserLocation()"><div id="locationData">Update Location</div></button></caption>
+		  		<thead>
+		    		<tr>
+		      			<th>Users</th>
+		      			<th>Location</th>
+		    		</tr>
+		  		</thead>
+		  		<tbody>
+	
+		    		<tr class="users side-menu-link" onclick="document.location = '#menu';">
+		      			<td><img class="circle" src="img/michael.jpeg" /> <h1>Michael Schultz</h1> <br /> <h2>Hemophilia</h2></td>
+		      			<td><div class="distance red-rectangle">1 Mile Away</div></td>
+		    		</tr>
+		    		
+		    		<tr class="users side-menu-link" onclick="document.location = '#menu';">
+		      			<td><img class="circle" src="img/seth.jpg" /> <h1>Seth Petty</h1> <br /> <h2>Hemophilia</h2></td>
+		      			<td><div class="distance yellow-rectangle">5 Miles Away</div></td>
+		    		</tr>
+		    		<tr class="users side-menu-link" onclick="document.location = '#menu';">
+		      			<td><img class="circle" src="img/jesse.jpg" /> <h1>Jesse Squires</h1> <br /> <h2>App Developer</h2></td>
+		      			<td><div class="distance teal-rectangle">18 Miles Away</div></td>
+		    		</tr>
+		    		<tr class="users side-menu-link" onclick="document.location = '#menu';">
+		      			<td><img class="circle" src="img/mike.jpg" /> <h1>Mike Bishop</h1> <br /> <h2>Hemophilia</h2></td>
+		      			<td><div class="distance city-rectangle">Findlay, OH</div></td>
+		    		</tr>
+		    		<tr class="users side-menu-link" onclick="document.location = '#menu';">
+		      			<td><img class="circle" src="img/octavious.jpg" /> <h1>Octavious Williams</h1> <br /> <h2>Hemophilia</h2></td>
+		      			<td><div class="distance international-rectangle">arediculousname, FR</div></td>
+		    		</tr>
+		  		</tbody>
+		  	</table>
+		
+			</div>
+			
+		</div>
+			
+	</div>
+	
+ </div>
+
+ 
+	<!-- Create an Account -->
+	<div id="createaccountModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="createaccountModalLabel" aria-hidden="true">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	    <h3 id="createaccountModalLabel">Start Using Hemoglobe</h3>
+	  </div>
+	  <div class="modal-body">
+	    <form class="form-horizontal">
+	      <div class="control-group">
+		    <label class="control-label" for="inputName">First and Last Name</label>
+		    <div class="controls">
+		      <input type="text" id="inputName" placeholder="John Smith">
+		    </div>
+		  </div>
+		  <div class="control-group">
+		    <label class="control-label" for="inputEmail">Email</label>
+		    <div class="controls">
+		      <input type="text" id="inputEmail" placeholder="john.smith@gmail.com">
+		    </div>
+		  </div>
+		  <div class="control-group">
+		    <label class="control-label" for="inputPassword">Password</label>
+		    <div class="controls">
+		      <input type="password" id="inputPassword" placeholder="Password">
+		    </div>
+		  </div>
+		  <div class="control-group">
+		    <label class="control-label" for="inputPassword2">Verify Password</label>
+		    <div class="controls">
+		      <input type="password" id="inputPassword2" placeholder="Password">
+		    </div>
+		  </div>
+		  <div class="control-group">
+		    <div class="controls">
+		      <button type="submit" class="btn">Create Account</button>
+		    </div>
+		  </div>
+		</form>
+	  </div>
+	  <div class="modal-footer">
+	    <!--<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>-->
+	  </div>
+	</div>
+	
+	
+	<!-- Message User -->
+	<div id="messageuserModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="messageuserModalLabel" aria-hidden="true">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	    <h3 id="messageuserModalLabel">Message Michael</h3>
+	  </div>
+	  <div class="modal-body">
+	  	<a class="btn btn-success btn-large btn-block" href="#"><i class="icon-comment icon-white"></i> Private Message</a>
+	  	<br />
+	  	<br />
+	   	<a class="btn btn-primary btn-large btn-block" href="#"><i class="icon-user icon-white"></i> Facebook</a>
+	   	<a class="btn btn-primary btn-large btn-block" href="#"><i class="icon-edit icon-white"></i> Twitter</a>
+	   	<a class="btn btn-info btn-large btn-block" href="#"><i class="icon-tint icon-white"></i> Microhealth</a>
+	  </div>
+	  <div class="modal-footer">
+	    <!--<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>-->
+	  </div>
+	</div>
+	
+	
+	<!-- Show Large Photo -->
+	<div id="userphotoModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="userphotoModalLabel" aria-hidden="true">
+
+	  <div class="modal-body">
+	    <img src="img/michael.jpeg" />
+	  </div>
+	  <div class="modal-footer">
+	    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	  </div>
+	</div>
+	      
+    
+    <!-- load javascript at end of body so page loads faster -->
+  
+  
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!--<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.7.min.js"></script>-->
+
+
+
+    
+  </body>
+</html>

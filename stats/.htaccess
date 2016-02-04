@@ -1,0 +1,5 @@
+AuthName "Restricted Area" 
+AuthType Basic 
+AuthUserFile /homepages/28/d89276904/htdocs/sites/hemoglobe/stats/.htpasswd 
+AuthGroupFile /dev/null 
+require valid-user

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!-- this is a test from Diet Coda -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HG Stats</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<link href="../img/apple-touch-icon-114x114.png"
+              sizes="114x114"
+              rel="apple-touch-icon-precomposed">
+	<link href="../img/apple-touch-icon-72x72.png"
+              sizes="72x72"
+              rel="apple-touch-icon-precomposed">
+
+	<link rel="icon" href="favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+  	<style>
+     	html, body {
+	  		padding: 0;
+	  		margin: 0;
+  		}
+
+    	#map_canvas {
+      		width: 100%;
+      		height: 500px;
+			margin: 0 auto;
+    	}
+
+		.navbar {
+			padding-bottom: 20px;
+		}
+
+		.navbar-static-top {
+			margin: 0 !important;
+		}
+	
+		.navbar .brand {
+		float: none;
+		text-align: center;
+		margin: 0 auto;
+
+		}
+
+
+	/* Large desktop */
+@media (min-width: 1200px) { ... }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { ... }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { ... }
+ 
+
+@media (max-width: 480px) { 
+
+	.navbar .brand {
+	float: none;
+	text-align: center;
+	margin: 0 auto;
+
+	}
+
+	.table-bordered {
+		border: 0;
+		-webkit-border-radius: 0;
+		border-radius: 0;
+	}
+
+	td {
+	padding-left: 20px !important;
+
+	}
+
+
+.table-bordered thead:first-child tr:first-child > th:last-child,
+.table-bordered tbody:first-child tr:first-child > td:last-child,
+.table-bordered tbody:first-child tr:first-child > th:last-child {
+  -webkit-border-top-right-radius: 0px;
+          border-top-right-radius: 0px;
+  -moz-border-radius-topright: 0px;
+}
+
+.table-bordered thead:first-child tr:first-child > th:first-child,
+.table-bordered tbody:first-child tr:first-child > td:first-child,
+.table-bordered tbody:first-child tr:first-child > th:first-child {
+  -webkit-border-top-left-radius: 0px;
+          border-top-left-radius: 0px;
+  -moz-border-radius-topleft: 0px;
+}
+
+.table-bordered thead:last-child tr:last-child > th:first-child,
+.table-bordered tbody:last-child tr:last-child > td:first-child,
+.table-bordered tbody:last-child tr:last-child > th:first-child,
+.table-bordered tfoot:last-child tr:last-child > td:first-child,
+.table-bordered tfoot:last-child tr:last-child > th:first-child {
+  -webkit-border-bottom-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+  -moz-border-radius-bottomleft: 0px;
+}
+
+.table-bordered thead:last-child tr:last-child > th:last-child,
+.table-bordered tbody:last-child tr:last-child > td:last-child,
+.table-bordered tbody:last-child tr:last-child > th:last-child,
+.table-bordered tfoot:last-child tr:last-child > td:last-child,
+.table-bordered tfoot:last-child tr:last-child > th:last-child {
+  -webkit-border-bottom-right-radius: 0px;
+          border-bottom-right-radius: 0px;
+  -moz-border-radius-bottomright: 0px;
+}
+
+
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 360px) { 
+
+	#map_canvas {
+      		width: 320px;
+      		height: 320px;
+			-webkit-mask-image: url(img/circle.svg);
+			-webkit-mask-repeat: no-repeat;
+			margin-left: -7px;
+    	}
+
+		.nudge {
+			margin-left: -7px !important;
+		}
+
+	
+
+}
+
+    </style>
+</head>
+
+<body onload="initializeMap('map_canvas')">
+
+
+<div class="navbar navbar-static-top">
+<div class="row-fluid">
+  <div class="navbar-inner">
+	<div class="span12">
+    	<a class="brand" href="#">Hemoglobe Stats</a>
+	</div>
+  </div>
+</div>
+</div>
+  
+
+<div class="container">
+	<div class="row-fluid">
+		<div class="span12">
+			<table class="table table-bordered table-condensed table-striped">
+			<tr>
+    			<td>Total Users</td>
+    			<td id="total"> </td>
+  			</tr>
+			<tr>
+    			<td>Hemophilia</td>
+    			<td id="hemo"> </td>
+  			</tr>
+			<tr>
+    			<td>Parents</td>
+    			<td id="parent"> </td>
+  			</tr>
+			<tr>
+    			<td>Industry</td>
+    			<td id="industry"> </td>
+  			</tr>
+			<tr>
+    			<td>Von Willebrand</td>
+    			<td id="vonwill"> </td>
+  			</tr>
+			<!--<tr>
+    			<td>App Dev</td>
+    			<td id="appdev"> </td>
+  			</tr>-->
+			<tr>
+    			<td><b>Countries Represented</b></td>
+    			<td id="countries"> </td>
+  			</tr>
+			</table>
+		</div>
+
+  		<div id="map_canvas" class="nudge span12"></div>
+
+	</div>
+
+</div>
+
+
+  <!-- load javascript at end of body so page loads faster -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.7.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
+  <script type="text/javascript" src="js/map_query.min.js"></script>
+
+     <!-- display user stats -->
+  <script type="text/javascript">
+    // find total amount of users for particular status
+
+    // 1st argument: 'affectedStatus', send "All" for all
+    // 2nd argument: html DOM id, number of users will be appended
+    appendTotalUsersWithAffectedStatusToElement("All", 'total');
+    appendTotalUsersWithAffectedStatusToElement("Hemophilia", 'hemo');
+    appendTotalUsersWithAffectedStatusToElement("Von Willebrand", 'vonwill');
+    appendTotalUsersWithAffectedStatusToElement("Parent", 'parent');
+    appendTotalUsersWithAffectedStatusToElement("Industry Member", 'industry');
+    appendTotalUsersWithAffectedStatusToElement("App Developer", 'appdev');
+
+	appendTotalCountriesToElement('countries');
+
+    // plot users last, after page load so animations are smooth
+
+    // plot users for particular status
+    // 1st argument: 'affectedStatus', send "All" for all
+    // 2nd argument: true to bounce recently active users, false otherwise
+    plotUsersOnMapAndBounce("All", true);
+  </script>
+
+</body>
+</html>
