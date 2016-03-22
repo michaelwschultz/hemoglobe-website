@@ -2,5 +2,5 @@
 # www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
 
 User-agent: *
-Disallow: /stats/
-Disallow: /app/
+Disallow: /archive/stats/
+Disallow: /archive/webapp/

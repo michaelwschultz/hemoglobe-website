@@ -1,182 +1,117 @@
 <!DOCTYPE html>
 <html>
-<!-- Update -->
+
+<!-- Updated 3/22/16 -->
   <head>
     <meta charset="utf-8" />
     <meta name="author" content="Michael Schultz" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-itunes-app" content="app-id=622855569">
-
-	<link rel="icon" href="favicon.png" type="image/x-icon">
-	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-
-  <meta property="og:title" content="Hemoglobe"/>
-  <meta property="og:type" content="application"/>
-  <meta property="og:url" content="http://hemoglobe.com"/>
-  <meta property="og:image" content="http://hemoglobe.com/img/iTunesArtwork.png"/>
-  <meta property="og:image" content="http://hemoglobe.com/img/hemoglobe-final-6.jpg"/>
-  <meta property="og:image" content="http://hemoglobe.com/img/iphone5-screen-1_2.png"/>
-  <meta property="og:site_name" content="Hemoglobe.com"/>
-  <meta property="og:description" content="From the creator of Hemolog comes a brand new mobile app for the Hemophilia community. Download Hemoglobe on the App Store now!"/>
-  <link rel="image_src" href="http://hemoglobe.com/img/iTunesArtwork.png" />
+    <!-- <meta name="apple-itunes-app" content="app-id=622855569"> -->
+  	<link rel="icon" href="favicon.png" type="image/x-icon">
+  	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <meta property="og:title" content="Hemoglobe"/>
+    <meta property="og:type" content="application"/>
+    <meta property="og:url" content="http://hemoglobe.com"/>
+    <meta property="og:image" content="http://hemoglobe.com/archive/img/iTunesArtwork.png"/>
+    <meta property="og:image" content="http://hemoglobe.com/archive/img/hemoglobe-final-6.jpg"/>
+    <meta property="og:image" content="http://hemoglobe.com/archive/img/iphone5-screen-1_2.png"/>
+    <meta property="og:site_name" content="Hemoglobe.com"/>
+    <meta property="og:description" content="After 4 years, Hemoglobe is shutting down. Thanks to everyone for all their support."/>
+    <link rel="image_src" href="http://hemoglobe.com/archive/img/iTunesArtwork.png" />
     
     <title>Hemoglobe</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-	
-    <link rel="stylesheet" href="css/bootstrap-responsive.css" />
+  	<!-- <link rel="stylesheet" href="archive/css/style.css" /> -->
 
-	<link rel="stylesheet" href="css/style.css" />
- 	
-   
+    <style>
+      html {
+        background: #0f1d40 url('archive/img/space_background.jpg') center center fixed;
+        -webkit-background-size:cover;
+        -moz-background-size:cover;
+        -o-background-size:cover;
+        background-size:cover;
+      }
+      body {
+        font-family: 'Helvetica Nueue', Helvetica, Arial;
+        color: white;
+      }
+      h1, h2, h3, p {
+        text-shadow: 0 2px 2px rgba(0,0,0,0.3);
+      }
+      p {
+        line-height: 22px;
+      }
+      h2 {
+        line-height: 40px;
+      }
+      h3 {
+        line-height: 24px;
+      }
+      .text-center {
+        text-align: center;
+      }
+      img {
+        max-width:100%;
+        max-height:100%;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        border-bottom: 2px solid rgba(255,255,255,0.2);
+        transition: all ease-in-out .2s;
+      }
+      a:hover {
+        border-color: white;
+      }
+    </style>
   </head>
+
   <body>
-
-
-    <div class="container">
-
- 
-      <div class="hero-unit silver">
-      	<h1 class="text-center"><img src="img/hemoglobe_logo.png" alt="Hemoglobe"></h1>
-        <h2 class="text-center">See who is nearby with Hemoglobe.</h2>
-        <p class="text-center hidden-phone">The impossible, has become possible. Discover other people with bleeding disorders in your area and beyond!</p>
-        <p class="text-center"><a href="http://bit.ly/hemoglobeapp" class="btn btn-primary btn-large">Download on the App Store</a></p>
-
-      </div>
-    
-    </div> <!-- /container -->
-
-
-   	<canvas id="pixie" class="marketing hidden-phone"></canvas>
-
-
-    <div class="container">
-
-      <!-- Example row of columns -->
-      <div class="row silver">
-        <div class="span4">
-          <h2>Global Reach</h2>
-          <p>Hemoglobe is available around the world. Not only can you find people near you but across the globe as well. We are all connected by our disorder, now you can be connected through Hemoglobe. </p>
-        </div>
-        <div class="span4">
-          <h2>Discover Friends</h2>
-          <p>Discover people in your city you never knew where there. Just open the app and let us do the rest. It's seriously as simple as that.</p>
-       </div>
-        <div class="span4">
-          <h2>Bleeders Unite!</h2>
-          <p>Hemoglobe let's you talk with other people privately. Share phone numbers, email addresses, or just keep talking through the app. It's up to you how you use Hemoglobe.</p>
-          <!--<p><a class="btn" href="#">View details &raquo;</a></p>-->
+    <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
+      <div style="max-width: 700px; min-width: 100px;">
+        <h1 class="text-center"><img src="archive/img/hemoglobe_logo.png" alt="Hemoglobe"></h1>
+        <h2 class="text-center" style="padding-bottom: 32px;">
+          After 4 years, 52 countries, 500 people, and over 3 thousand messages sent Hemoglobe has been shutdown.
+        </h2>
+        <p>
+          What was once impossible, Hemoglobe made a reality. Growing up with hemophilia. I, like many of you craved a connection with
+          someone else like me. For the longest time, this was difficult. I tired going to local events when I was younger but found it hard to connect.
+        </p>
+        <p>
+          In college I had the idea for Hemoglobe and tried to build it using Google Maps and an Excel Spreadsheet. I wanted people to visit the website
+          and place themselves on the map by entering in their data into a spreadsheet. Crude, but it could have worked. Fast forward a few years and
+          Hemoglobe for iPhone was born thanks to the kind souls at <a href="http://affinitybiotech.com">Affinity Biotech</a> who encouraged and helped
+          make it a reality. Also a big thanks to <a href="http://jessesquires.com">Jesse Squires</a> who developed the app with me. Couldn't have done it without him.
+        </p>
+        <h3>Thanks to everyone who downloaded and tried out the app. I hope you got something out of it. Cheers!</h3>
+        <h2><a href="http://twitter.com/michaelschultz">Michael Schultz</a></h2>
+        <div class="text-center" style="margin: 40px 0;">
+          <a href="/archive"
+             style="background: white;
+             color: #2198c3;
+             padding: 12px 14px;
+             border-radius: 4px;
+             text-transform: uppercase;
+             font-size: 14px;
+             font-weight: 700;
+             text-decoration: none;
+             box-shadow: 0 0 4px rgba(0,0,0,0.2)">
+            View old website
+          </a>
         </div>
       </div>
-      
-      <div class="row hidden-phone">
-      	<div class="span4">
-      		<img class="iphone" src="img/iphone5-screen-1.png">
-      	</div>
-      	<div class="span4">
-      		<img class="iphone" src="img/iphone5-screen-2.png">
-      	</div>
-      	<div class="span4">
-      		<img class="iphone" src="img/iphone5-screen-3.png">
-      	</div>
-      </div>
-     
-    </div> <!-- /container -->
-    
-    
-<!--     <div id="map_canvas" class="visible-desktop"></div> -->
-    
-    
-    <div class="grey">
-    
-	    <div class="container">
+    </div>
 
+    <!-- Extra Scripts -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-534843-25']);
+      _gaq.push(['_trackPageview']);
 
-      <div class="row">
-        <div class="span8 offset2">
-          <div class="flex-video widescreen"><iframe src="https://www.youtube.com/embed/kcIDV_YPbqA?orgin=https://hemoglobe.com" frameborder="0" allowfullscreen></iframe></div>
-        </div>
-      </div>
-
-
-
-		    <div class="hero-unit">
-		    	<h1 class="text-center">Quotes From Around The Globe</h1>
-		    </div>
-		    <div class="row">
-		    	<div class="span6 extra">
-			    <blockquote>
-			    	<img class="thumbnail" src="img/daniel.jpg" alt="daniel">
-				    <p>"It's great to finally have something that is both compatible with my busy lifestyle and can help me meet people in my hemophilia community."</p>
-				    <small>Daniel Cieslak (Covington, KY)</small>
-			    </blockquote>
-		    	</div>
-		    	
-		    	<div class="span6 extra">
-			    <blockquote>
-			    	<img class="thumbnail" src="img/edward.jpg" alt="edward">
-				    <p>"Hemoglobe is creating new local, state, and regional communities. Providing a new avenue for collaboration and support never seen before."</p>
-				    <small>Edward Jones (Dallas, Texas)</small>
-			    </blockquote>
-		    	</div>
-		    </div>
-		    
-		    
-		    <div class="row">
-		    	<div class="span6 extra">
-			    <blockquote>
-			    	<img class="thumbnail" src="img/aaron.jpg" alt="aaron">
-				    <p>"I like coffee. Now it's easier than ever for me to grab a cup with a friend from the community who might be nearby."</p>
-				    <small>Aaron Craig (New York, New York)</small>
-			    </blockquote>
-		    	</div>
-		    	
-		    	<div class="span6 extra">
-			    <blockquote>
-			    	<img class="thumbnail" src="img/pjl.jpg" alt="patrick">
-				    <p>"Michael has created something which further shrinks our dispersed community. Hemoglobe is a great example of technology unifying bleeders around the world."</p>
-				    <small>Patrick James Lynch (New York, New York)</small>
-			    </blockquote>
-		    	</div>
-		    </div>
-
-	      </div> <!-- /container -->
-    </div> <!-- /grey -->
-   
-   <div class="container silver">
-   		<footer>
-   		<p class="footer">
-	       	  &copy; Hemoglobe 2014
-   		</p>
-	     </footer> 
-   
-   </div>
-      
-    
-    <!-- load javascript at end of body so page loads faster -->
-  
-  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.7.min.js"></script> -->
-  <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script> -->
-  <!-- <script type="text/javascript" src="js/map_query.min.js"></script> -->
-  <!-- <script type="text/javascript" src="js/holder.js"></script> -->
-  <script type="text/javascript" src="js/pixie.js"></script>
-
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-534843-25']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </body>
 </html>
